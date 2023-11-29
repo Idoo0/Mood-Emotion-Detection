@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P">
+    
+    <style>
+    	a {
+    		font-size: 10px;
+    		font-family: 'Press Start 2P', sans-serif;
+    	}
+    	b {
+    		font-size: 30px;
+    		font-family: 'Space Grotesk', sans-serif;
+    	}
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Menyusun elemen secara vertikal */
+            align-items: center; /* Menyusun elemen di tengah secara horizontal */
+            justify-content: center; /* Menyusun elemen di tengah secara vertikal */
+            height: 100vh;
+            background: linear-gradient(360deg, #FFFB9E 0%, #FFFFFF 100%);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FFFB9E;
+            color: #000;
+            padding: 0.5px 20px;
+            width: 100%; /* Menyusun navbar secara penuh lebar */
+            position: fixed; /* Menjadikan navbar tetap di atas */
+            top: 0; /* Menempatkan navbar di bagian paling atas */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            margin: 10px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00bcd4;
+        }
+
+        .gambar {
+		    display: flex;
+		    flex-direction: row; /* Mengatur agar elemen anaknya disusun secara horizontal */
+		    justify-content: center;
+		    gap: 70px;
+		    padding: 50px;
+		    margin-top: 10px;
+		}
+
+		.gambar > div {
+		    width: 350px; /* Ubah nilai width sesuai kebutuhan */
+		    height: 250px; /* Ubah nilai height sesuai kebutuhan */
+		    border-radius: 15px;
+		    overflow: hidden;
+		    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.gambar > div img {
+		    width: 100%;
+		    height: 100%;
+		    border-radius: 15px;
+		}
+
+		.gambar > div:hover {
+		    background-color: #ccc;
+		    transform: scale(1.1);
+		    transition: background-color 0.3s ease, transform 0.3s ease;
+		}
+    </style>
+    <title>Mood Project</title>
+</head>
+<body>
+
+    <nav>
+        <div>
+            <a href="#">
+                <img src="img/logo.png" class="logo" width="30%">
+            </a>
+        </div>
+        <div>
+            <a href="#about">ABOUT</a>
+            <a href="#project">PROJECT</a>
+        </div>
+    </nav>
+    <h1>Pick Your Ways!</h1>
+    <section class="gambar">
+      <div>
+        <a href="gambar.html">
+        	<img src="img/gambar.gif" alt="Gambar 1">	
+        </a>
+        
+      </div>
+      <div>
+      	<a href="suara.html">
+        	<img src="img/suara.gif" alt="Gambar 2">
+      	</a>
+      </div>    
+    </section>
+    <!-- Konten About dan Project akan ditambahkan di sini -->
+
+</body>
+</html>
