@@ -78,6 +78,27 @@
 		    transform: scale(1.1);
 		    transition: background-color 0.3s ease, transform 0.3s ease;
 		}
+
+        .gambar > .foto:hover::before {
+            content: 'Image'; /* Text to be displayed for div with class "foto" */
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+            font-size: 20px;
+        }
+
+        .gambar > .suara:hover::before {
+            content: 'Voice'; /* Text to be displayed for div with class "suara" */
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+            font-size: 20px;
+        }
+
     </style>
     <title>Mood Project</title>
 </head>
@@ -96,13 +117,13 @@
     </nav>
     <h1>Pick Your Ways!</h1>
     <section class="gambar">
-      <div>
+      <div class="foto">
         <a href="gambar.html">
         	<img src="img/gambar.gif" alt="Gambar 1">	
         </a>
         
       </div>
-      <div>
+      <div class="suara">
       	<a href="suara.html">
         	<img src="img/suara.gif" alt="Gambar 2">
       	</a>

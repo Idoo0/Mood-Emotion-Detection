@@ -100,6 +100,29 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
     </style>
+    <script>
+        function displayFileName() {
+            var input = document.getElementById('voiceFile');
+            var output = document.getElementById('selectedFileName');
+            var fileName = input.value.split('\\').pop(); // Mendapatkan nama file dari path lengkap
+
+            if (fileName.trim() !== '') {
+                // Menampilkan keterangan nama file jika file berhasil diupload
+                output.innerHTML = '<br><br>' + fileName + ' uploaded successfully!';
+
+                // Mengubah label dan fungsi onclick tombol setelah upload berhasil
+                var uploadButton = document.getElementById('uploadButton');
+                uploadButton.innerHTML = 'Next';
+                uploadButton.onclick = function () {
+                    // Ganti URL dengan halaman berikutnya yang ingin Anda redirect
+                    window.location.href = 'resultFoto.html';
+                };
+            } else {
+                // Jika tidak ada file yang diunggah, berikan pesan atau tidak lakukan apa-apa
+                output.innerHTML = '<br><br>No file uploaded.';
+            }
+        }
+    </script>
     <title>Mood Project</title>
 </head>
 <body>
@@ -119,7 +142,7 @@
     <div class="container">
         <b>Your Voice, Your Emotions: Anger Unveiled with Precision</b><br><br>
         <input type="file" id="voiceFile" name="gambar" style="display: none;" onchange="displayFileName()">
-        <label for="voiceFile" class="get-started-btn">Upload Voice</label>
+        <label for="voiceFile" id="uploadButton" class="get-started-btn">Upload Voice</label>
         <span id="selectedFileName"></span>
     </div>
 </body>
