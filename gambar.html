@@ -64,6 +64,7 @@
             border-radius: 15px;
             text-decoration: none;
             transition: background-color 0.3s ease;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .get-started-btn:hover {
@@ -117,7 +118,9 @@
     <br><br>
     <div class="container">
         <b>Capture Your Essence, Share Your Vibes</b><br><br>
-        <a href="home2.html" class="get-started-btn">Upload Image</a>
+        <input type="file" id="voiceFile" name="gambar" style="display: none;" onchange="displayFileName()">
+        <label for="voiceFile" class="get-started-btn">Upload Voice</label>
+        <span id="selectedFileName"></span>
     </div>
 
 </body>
