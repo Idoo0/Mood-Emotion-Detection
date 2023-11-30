@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P">
     
@@ -24,7 +25,9 @@
             align-items: center; /* Menyusun elemen di tengah secara horizontal */
             justify-content: center; /* Menyusun elemen di tengah secara vertikal */
             height: 100vh;
-            background: linear-gradient(360deg, #FFFB9E 0%, #FFFFFF 100%);
+            background-image: url('img/home.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         nav {
@@ -37,6 +40,7 @@
             width: 100%; /* Menyusun navbar secara penuh lebar */
             position: fixed; /* Menjadikan navbar tetap di atas */
             top: 0; /* Menempatkan navbar di bagian paling atas */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
@@ -64,10 +68,12 @@
             border-radius: 50px;
             text-decoration: none;
             transition: background-color 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .get-started-btn:hover {
             background-color: #00bcd4;
+            color: white;
         }
 
         .gambar {

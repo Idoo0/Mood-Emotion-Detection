@@ -24,7 +24,9 @@
             align-items: center; /* Menyusun elemen di tengah secara horizontal */
             justify-content: center; /* Menyusun elemen di tengah secara vertikal */
             height: 100vh;
-            background: linear-gradient(360deg, #FFFB9E 0%, #FFFFFF 100%);
+            background-image: url('img/home.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         nav {
@@ -37,6 +39,7 @@
             width: 100%; /* Menyusun navbar secara penuh lebar */
             position: fixed; /* Menjadikan navbar tetap di atas */
             top: 0; /* Menempatkan navbar di bagian paling atas */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
@@ -65,6 +68,7 @@
             text-decoration: none;
             transition: background-color 0.3s ease;
             font-family: 'Press Start 2P', sans-serif;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .get-started-btn:hover {
