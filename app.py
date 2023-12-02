@@ -18,7 +18,7 @@ def gambar():
 def suara():
     return render_template('suara.html')
 
-@app.route('/resultFoto')
+@app.route('/resultpic')
 def resultFoto():
     return render_template('resultFoto.html')
 
