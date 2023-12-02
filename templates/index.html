@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/icon.png">
+    <link rel="icon" href="{{url_for('static', filename='icon.png')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P">
     
@@ -25,7 +25,7 @@
             align-items: center; /* Menyusun elemen di tengah secara horizontal */
             justify-content: center; /* Menyusun elemen di tengah secara vertikal */
             height: 100vh;
-            background-image: url('img/home.jpg');
+            background-image: url('/static/home.jpg');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -112,7 +112,7 @@
     <nav>
         <div>
             <a href="index.html">
-                <img src="img/logo.png" class="logo" width="30%">
+                <img src="{{url_for('static', filename='logo.png')}}" class="logo" width="30%">
             </a>
         </div>
         <div>
@@ -124,7 +124,7 @@
     <div class="container">
         <b>Welcome In: Your Mood, Our Focus</b><br><br>
         <p>Explore a dynamic emotional canvas, fuel your cinematic curiosity, and rejoice in the diversity of human<br>expression. Join the expedition</p><br><br>
-        <a href="home2.html" class="get-started-btn">CONTINUE!</a>
+        <a href="{{ url_for('home2') }}" class="get-started-btn">CONTINUE!</a>
     </div>
 
 </body>

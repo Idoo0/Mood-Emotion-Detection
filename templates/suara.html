@@ -24,7 +24,7 @@
             align-items: center; /* Menyusun elemen di tengah secara horizontal */
             justify-content: center; /* Menyusun elemen di tengah secara vertikal */
             height: 100vh;
-            background-image: url('img/home.jpg');
+            background-image: url('static/home.jpg');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -134,7 +134,7 @@
     <nav>
         <div>
             <a href="index.html">
-                <img src="img/logo.png" class="logo" width="30%">
+                <img src="{{url_for('static', filename='logo.png')}}" class="logo" width="30%">
             </a>
         </div>
         <div>

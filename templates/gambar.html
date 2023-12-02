@@ -24,7 +24,7 @@
             align-items: center; /* Menyusun elemen di tengah secara horizontal */
             justify-content: center; /* Menyusun elemen di tengah secara vertikal */
             height: 100vh;
-            background-image: url('img/home.jpg');
+            background-image: url('static/home.jpg');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -119,7 +119,7 @@
                 uploadButton.innerHTML = 'Next';
                 uploadButton.onclick = function () {
                     // Ganti URL dengan halaman berikutnya yang ingin Anda redirect
-                    window.location.href = 'resultFoto.html';
+                    window.location.href = {{url_for('resultFoto')}};
                 };
             } else {
                 // Jika tidak ada file yang diunggah, berikan pesan atau tidak lakukan apa-apa
@@ -135,7 +135,7 @@
     <nav>
         <div>
             <a href="index.html">
-                <img src="img/logo.png" class="logo" width="30%">
+                <img src="{{url_for('static', filename='logo.png')}}" class="logo" width="30%">
             </a>
         </div>
         <div>

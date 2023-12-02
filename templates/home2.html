@@ -24,7 +24,7 @@
             align-items: center; /* Menyusun elemen di tengah secara horizontal */
             justify-content: center; /* Menyusun elemen di tengah secara vertikal */
             height: 100vh;
-            background-image: url('img/home.jpg');
+            background-image: url('static/home.jpg');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -111,7 +111,7 @@
     <nav>
         <div>
             <a href="index.html">
-                <img src="img/logo.png" class="logo" width="30%">
+                <img src="{{url_for('static', filename='logo.png')}}" class="logo" width="30%">
             </a>
         </div>
         <div>
@@ -122,14 +122,13 @@
     <h1>Pick Your Ways!</h1>
     <section class="gambar">
       <div class="foto">
-        <a href="gambar.html">
-        	<img src="img/gambar.gif" alt="Gambar 1">	
+        <a href="{{ url_for('gambar') }}">
+        	<img src={{url_for('static', filename='gambar.gif')}}>
         </a>
-        
       </div>
       <div class="suara">
-      	<a href="suara.html">
-        	<img src="img/suara.gif" alt="Gambar 2">
+        <a href="{{ url_for('suara') }}">
+        	<img src={{url_for('static', filename='suara.gif')}}>
       	</a>
       </div>    
     </section>
