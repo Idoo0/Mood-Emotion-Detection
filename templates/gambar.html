@@ -104,30 +104,29 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
     </style>
-    <script>
-        function displayFileName() {
-            var input = document.getElementById('voiceFile');
-            var output = document.getElementById('selectedFileName');
-            var fileName = input.value.split('\\').pop(); // Mendapatkan nama file dari path lengkap
-
-            if (fileName.trim() !== '') {
-                // Menampilkan keterangan nama file jika file berhasil diupload
-                output.innerHTML = '<br><br>' + fileName + ' uploaded successfully!';
-
-                // Mengubah label dan fungsi onclick tombol setelah upload berhasil
-                var uploadButton = document.getElementById('uploadButton');
-                uploadButton.innerHTML = 'Next';
-                uploadButton.onclick = function () {
-                    // Ganti URL dengan halaman berikutnya yang ingin Anda redirect
-                    window.location.href = {{url_for('resultFoto')}};
-                };
-            } else {
-                // Jika tidak ada file yang diunggah, berikan pesan atau tidak lakukan apa-apa
-                output.innerHTML = '<br><br>No file uploaded.';
+        <script>
+            function displayFileName() {
+                var input = document.getElementById('voiceFile');
+                var output = document.getElementById('selectedFileName');
+                var fileName = input.value.split('\\').pop(); // Mendapatkan nama file dari path lengkap
+    
+                if (fileName.trim() !== '') {
+                    // Menampilkan keterangan nama file jika file berhasil diupload
+                    output.innerHTML = '<br><br>' + fileName + ' uploaded successfully!';
+    
+                    // Mengubah label dan fungsi onclick tombol setelah upload berhasil
+                    var uploadButton = document.getElementById('uploadButton');
+                    uploadButton.innerHTML = 'Next';
+                    uploadButton.onclick = function () {
+                        // Ganti URL dengan halaman berikutnya yang ingin Anda redirect
+                        window.location.href = 'resultFoto.html';
+                    };
+                } else {
+                    // Jika tidak ada file yang diunggah, berikan pesan atau tidak lakukan apa-apa
+                    output.innerHTML = '<br><br>No file uploaded.';
+                }
             }
-        }
-
-    </script>
+        </script>
     <title>Mood Project</title>
 </head>
 <body>
