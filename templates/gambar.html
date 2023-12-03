@@ -116,7 +116,6 @@
     
                     // Mengubah label dan fungsi onclick tombol setelah upload berhasil
                     var uploadButton = document.getElementById('uploadButton');
-                    uploadButton.innerHTML = 'Next';
                     uploadButton.onclick = function () {
                         // Ganti URL dengan halaman berikutnya yang ingin Anda redirect
                         window.location.href = 'resultFoto.html';
@@ -145,9 +144,12 @@
     <br><br>
     <div class="container">
         <b>Capture Your Essence, Share Your Vibes</b><br><br>
-        <input type="file" id="voiceFile" name="gambar" style="display: none;" onchange="displayFileName()">
-        <label for="voiceFile" id="uploadButton" class="get-started-btn">Upload Image</label>
-        <span id="selectedFileName"></span>
+        <form action="/gambar" method="post" enctype="multipart/form-data">
+            <input type="file" id="voiceFile" name="gambar" style="display: none;" onchange="displayFileName()">
+            <label for="voiceFile" id="uploadButton" class="get-started-btn">Choose File</label>
+            <span id="selectedFileName"></span>
+            <button type="submit" class="get-started-btn">Next</button>
+        </form>        
     </div>
     <br>
 
