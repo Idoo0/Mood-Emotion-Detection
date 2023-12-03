@@ -23,9 +23,9 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column; /* Menyusun elemen secara vertikal */
-            align-items: center; /* Menyusun elemen di tengah secara horizontal */
-            justify-content: center; /* Menyusun elemen di tengah secara vertikal */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             height: 100vh;
             background-image: url('/static/home.jpg');
             background-repeat: no-repeat;
@@ -39,9 +39,9 @@
             background-color: #FFFB9E;
             color: #000;
             padding: 0.5px 20px;
-            width: 100%; /* Menyusun navbar secara penuh lebar */
-            position: fixed; /* Menjadikan navbar tetap di atas */
-            top: 0; /* Menempatkan navbar di bagian paling atas */
+            width: 100%;
+            position: fixed;
+            top: 0;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
@@ -61,6 +61,40 @@
             margin: 165px auto;
         }
 
+        .gambar {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            margin-top: 80px;
+        }
+
+        .image-container {
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%; /* Menetapkan lebar 100% untuk mengikuti ukuran gambar */
+            max-width: 600px; /* Ganti dengan lebar maksimum yang diinginkan */
+            margin: 0 auto; /* Membuatnya berada di tengah */
+        }
+
+        .image-container img {
+            width: 100%; /* Menetapkan lebar gambar 100% */
+            height: auto;
+            border-radius: 15px;
+            display: block; /* Menyelesaikan masalah whitespace di bagian bawah gambar */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        }
+
+
+        .prediction-container {
+            width: 50%;
+            text-align: left;
+            border-radius: 15px;
+        }
+
         .get-started-btn {
             display: inline-block;
             padding: 15px 30px;
@@ -76,29 +110,6 @@
         .get-started-btn:hover {
             background-color: #00bcd4;
             color: white;
-        }
-
-        .gambar {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-            margin-top: 80px;
-        }
-
-        .gambar > div {
-            width: 200px;
-            height: 150px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .gambar > div img {
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
         }
 
         .gambar > div:hover {
@@ -122,27 +133,36 @@
             <a href="project.html">PROJECT</a>
         </div>
     </nav>
-    <h1>Result Foto</h1>
-    
-    {% if filename %}
-        <img src="{{ url_for('static', filename='uploadFoto/' + filename) }}" alt="Uploaded Image">
-        {% if predicted_category %}
-            <h2>Prediction:</h2>
-            <p>Category: {{ predicted_category }}</p>
-            <p>Confidence: {{ confidence * 100 }}%</p>
-        {% else %}
-            <p>No predictions available</p>
-        {% endif %}
-        <br>
-        <p>Sedih: {{ sedih }}% </p>
-        <p>Senang: {{ senang }}% </p>
-        <p>Netral: {{ netral }}% </p>
-        <p>Marah: {{ marah }}% </p>
-    {% else %}
-        <p>No image available</p>
-    {% endif %}
 
-    
-    <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+    <div class="container">
+        <div class="gambar">
+            <div class="image-container">
+                {% if filename %}
+                    <img src="{{ url_for('static', filename='uploadFoto/' + filename) }}" alt="Uploaded Image">
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
+            </div>
+
+            <div class="prediction-container">
+                {% if filename %}
+                    {% if predicted_category %}
+                        <h2>Prediction</h2>
+                        <p>Category: {{ predicted_category }}</p>
+                        <p>Confidence: {{ confidence * 100 }}%</p>
+                    {% else %}
+                        <p>No predictions available</p>
+                    {% endif %}
+                    <p>Sad: {{ sedih }}% </p>
+                    <p>Happy: {{ senang }}% </p>
+                    <p>Neutral: {{ netral }}% </p>
+                    <p>Angry: {{ marah }}% </p>
+                {% endif %}
+            </div>
+        </div>
+
+        <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+    </div>
+
 </body>
 </html>

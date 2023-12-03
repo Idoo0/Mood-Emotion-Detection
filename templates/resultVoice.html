@@ -1,10 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P">
+    
+    <style>
+    	a {
+    		font-size: 10px;
+    		font-family: 'Press Start 2P', sans-serif;
+    	}
+    	b {
+    		font-size: 30px;
+    		font-family: 'Space Grotesk', sans-serif;
+    	}
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Menyusun elemen secara vertikal */
+            align-items: center; /* Menyusun elemen di tengah secara horizontal */
+            justify-content: center; /* Menyusun elemen di tengah secara vertikal */
+            height: 100vh;
+            background-image: url('static/home.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #FFFB9E;
+            color: #000;
+            padding: 0.5px 20px;
+            width: 100%; /* Menyusun navbar secara penuh lebar */
+            position: fixed; /* Menjadikan navbar tetap di atas */
+            top: 0; /* Menempatkan navbar di bagian paling atas */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000;
+            margin: 10px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00bcd4;
+        }
+
+        .gambar {
+		    display: flex;
+		    flex-direction: row; /* Mengatur agar elemen anaknya disusun secara horizontal */
+		    justify-content: center;
+		    gap: 70px;
+		    padding: 50px;
+		    margin-top: 10px;
+		}
+
+		.gambar > div {
+		    width: 350px; /* Ubah nilai width sesuai kebutuhan */
+		    height: 250px; /* Ubah nilai height sesuai kebutuhan */
+		    border-radius: 15px;
+		    overflow: hidden;
+		    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.gambar > div img {
+		    width: 100%;
+		    height: 100%;
+		    border-radius: 15px;
+		}
+
+		.gambar > div:hover {
+		    background-color: #ccc;
+		    transform: scale(1.1);
+		    transition: background-color 0.3s ease, transform 0.3s ease;
+		}
+
+        .gambar > .foto:hover::before {
+            content: 'Image'; /* Text to be displayed for div with class "foto" */
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+            font-size: 20px;
+        }
+
+        .gambar > .suara:hover::before {
+            content: 'Voice'; /* Text to be displayed for div with class "suara" */
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+            font-size: 20px;
+        }
+
+    </style>
+    <title>Mood Project</title>
 </head>
 <body>
-	<h1>tess</h1>
+
+    <nav>
+        <div>
+            <a href="{{ url_for('index') }}">
+                <img src="{{url_for('static', filename='logo.png')}}" class="logo" width="30%">
+            </a>
+        </div>
+        <div>
+            <a href="aboout.html">ABOUT</a>
+            <a href="project.html">PROJECT</a>
+        </div>
+    </nav>
+
+    <h1>Predictions</h1>
+    <audio controls>
+        <source src="{{ url_for('static', filename='uploadVoice/' + filename) }}" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h1>Your Emotion Now is: {{prediction[0]}}</h1>
+
+    <br><br><br>
+    <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+    
+
 </body>
 </html>
