@@ -103,5 +103,9 @@ def resultVoice(filename):
     prediction=model_voice.predict(feature)
     return render_template('resultVoice.html', filename=filename, prediction=prediction)
 
+@app.route('/project')
+def project():
+    return render_template('project.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

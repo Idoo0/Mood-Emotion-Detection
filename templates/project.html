@@ -6,16 +6,18 @@
     <link rel="icon" href="{{url_for('static', filename='icon.png')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P">
-    
+
     <style>
         a {
             font-size: 10px;
             font-family: 'Press Start 2P', sans-serif;
         }
+
         b {
             font-size: 30px;
             font-family: 'Space Grotesk', sans-serif;
         }
+        
         body {
             font-family: 'Space Grotesk', sans-serif;
             margin: 0;
@@ -55,6 +57,8 @@
         }
 
         .container {
+            width: 996px;
+            height: 540px;
             text-align: center;
             margin: 165px auto;
         }
@@ -108,7 +112,6 @@
     <title>Mood Project</title>
 </head>
 <body>
-
     <nav>
         <div>
             <a href="{{ url_for('index') }}">
@@ -120,12 +123,30 @@
             <a href="{{ url_for('project') }}">PROJECT</a>
         </div>
     </nav>
-    <br><br>
     <div class="container">
-        <b>Welcome In: Your Mood, Our Focus</b><br><br>
-        <p>Explore a dynamic emotional canvas, fuel your cinematic curiosity, and rejoice in the diversity of human<br>expression. Join the expedition</p><br><br>
-        <a href="{{ url_for('home2') }}" class="get-started-btn">CONTINUE!</a>
-    </div>
-
+        <b>Welcome To Mood</b><br>
+        <p>
+            A revolutionary project that brings a new experience to the world of machine learning to
+            help you understand and measure different levels of emotions. Mood allows users to
+            quickly detect happy, sad or angry from uploaded images, text or sounds, making
+            understanding emotions more accessible to everyone.
+        </p>
+        <p>
+            With a friendly and intuitive user interface, Mood gives users the flexibility to convey emotions through
+            various forms of data. You can upload meaningful images, enter text that provides insight, or record
+            sounds that reflect how you feel. Mood's intelligent system then works with the latest machine learning 
+            technology to recognize and analyze the emotional expressions contained in the content.
+        </p>
+        <p>
+            Mood not only provides real-time analysis results, but also presents clear and easy-to-understand
+            visualizations. Key features of the project include fast and accurate analysis of various types of data,
+            making Mood a very useful tool for understanding and responding to emotions.
+        </p>
+        <p>
+            With the support of the latest technology, a user-friendly interface, and guaranteed data security,
+            Mood comes as a solution that is accessible to all. Let's explore and understand the world of emotions
+            together through Mood. Welcome to a new era of deeper understanding of emotions!
+        </p>
+    </div> 
 </body>
 </html>
