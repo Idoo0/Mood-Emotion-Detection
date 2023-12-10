@@ -84,16 +84,17 @@ def suara():
 def resultFoto(filename):
     image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
     predictions = predict_image(image_path)
-    categories = ['Sedih', 'Senang', 'Netral', 'Marah']
+    categories = ['Sad', 'Happy', 'Neutral', 'Angry']
     predicted_class = np.argmax(predictions)
     predicted_category = categories[predicted_class]
     confidence = predictions[0, predicted_class]
+    confidence = f"{confidence*100:.2f}";
     probability = predictions[0];
-    sedih = f"{probability[0]*100:.2f}";
-    senang = f"{probability[1]*100:.2f}";
-    netral = f"{probability[2]*100:.2f}";
-    marah = f"{probability[3]*100:.2f}";
-    return render_template('resultFoto.html', filename=filename, predicted_category=predicted_category, confidence=confidence, sedih=sedih, senang=senang, marah=marah, netral=netral)
+    sad = f"{probability[0]*100:.2f}";
+    happy = f"{probability[1]*100:.2f}";
+    neutral = f"{probability[2]*100:.2f}";
+    angry = f"{probability[3]*100:.2f}";
+    return render_template('resultFoto.html', filename=filename, predicted_category=predicted_category, confidence=confidence, sad=sad, happy=happy, angry=angry, neutral=neutral)
 
 @app.route('/resultVoice/<filename>')
 def resultVoice(filename):
