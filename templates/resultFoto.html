@@ -76,6 +76,7 @@
             justify-content: center;
             width: 100%; /* Menetapkan lebar 100% untuk mengikuti ukuran gambar */
             max-width: 400px; /* Ganti dengan lebar maksimum yang diinginkan */
+            max-height: 400px;
             margin: 0 auto; /* Membuatnya berada di tengah */
         }
 
@@ -150,14 +151,14 @@
                     {% if predicted_category %}
                         <h2>Prediction</h2>
                         <p>Category: {{ predicted_category }}</p>
-                        <p>Confidence: {{ confidence * 100 }}%</p>
+                        <p>Confidence: {{ confidence }}%</p>
                     {% else %}
                         <p>No predictions available</p>
                     {% endif %}
-                    <p>Sad: {{ sedih }}% </p>
-                    <p>Happy: {{ senang }}% </p>
-                    <p>Neutral: {{ netral }}% </p>
-                    <p>Angry: {{ marah }}% </p>
+                    <p>Sad: {{ sad }}% </p>
+                    <p>Happy: {{ happy }}% </p>
+                    <p>Neutral: {{ neutral }}% </p>
+                    <p>Angry: {{ angry }}% </p>
                 {% endif %}
             </div>
         </div>
