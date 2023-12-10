@@ -17,7 +17,6 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 UPLOAD_VOICE = 'static/uploadVoice'
 app.config['UPLOAD_VOICE'] = UPLOAD_VOICE
 
-# Load your pre-trained model (replace 'path/to/your/model.h5' with your actual model path)
 model = load_model('model_gambar.h5')
 model_voice = pickle.load(open("modelForPrediction1.sav", 'rb'))
 
