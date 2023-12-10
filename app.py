@@ -18,7 +18,7 @@ UPLOAD_VOICE = 'static/uploadVoice'
 app.config['UPLOAD_VOICE'] = UPLOAD_VOICE
 
 model = load_model('model_gambar.h5')
-model_voice = pickle.load(open("modelForPrediction1.sav", 'rb'))
+model_voice = pickle.load(open("model_suara.sav", 'rb'))
 
 def extract_feature(file_name, mfcc, chroma, mel):
     with soundfile.SoundFile(file_name) as sound_file:
